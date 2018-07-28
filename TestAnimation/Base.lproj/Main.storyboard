@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TestAnimation" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2e" translatesAutoresizingMaskIntoConstraints="NO" id="96f-iq-Cgw">
+                                <rect key="frame" x="91" y="215" width="139" height="139"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="139" id="89a-lv-rft"/>
+                                    <constraint firstAttribute="width" constant="139" id="Yb4-dx-dSs"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="NCT-ih-mer">
+                                <rect key="frame" x="91" y="215" width="139" height="139"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="139" id="JeR-aa-ann"/>
+                                    <constraint firstAttribute="height" constant="139" id="Vey-yR-j79"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dFT-wQ-sQz">
+                                <rect key="frame" x="137" y="374" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="goButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TYc-h9-Mlg"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="96f-iq-Cgw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="A9B-2i-oCH"/>
+                            <constraint firstItem="NCT-ih-mer" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="A9B-CH-CLu"/>
+                            <constraint firstItem="dFT-wQ-sQz" firstAttribute="top" secondItem="NCT-ih-mer" secondAttribute="bottom" constant="20" id="Hiu-02-8NY"/>
+                            <constraint firstItem="dFT-wQ-sQz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="137" id="YKq-Wi-Hc2"/>
+                            <constraint firstItem="NCT-ih-mer" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kUM-oy-Uor"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dFT-wQ-sQz" secondAttribute="trailing" constant="137" id="lcH-Zh-7XF"/>
+                            <constraint firstItem="96f-iq-Cgw" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="zT9-PN-bD6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageWithAnimation" destination="NCT-ih-mer" id="Biw-fv-6FP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="1" width="696" height="696"/>
+        <image name="2e" width="400" height="400"/>
+    </resources>
+</document>
