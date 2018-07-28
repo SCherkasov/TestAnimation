@@ -39,14 +39,33 @@
                                     <action selector="goButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TYc-h9-Mlg"/>
                                 </connections>
                             </button>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8YJ-W1-AgT">
+                                <rect key="frame" x="90.5" y="39" width="139" height="139"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2e" translatesAutoresizingMaskIntoConstraints="NO" id="Ntb-WD-eSu">
+                                        <rect key="frame" x="0.0" y="0.0" width="139" height="139"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.44178364079999999" green="0.88242794690000004" blue="0.49096015100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="139" id="5Du-h4-8hC"/>
+                                    <constraint firstAttribute="height" constant="139" id="J6K-Ho-PjA"/>
+                                    <constraint firstItem="Ntb-WD-eSu" firstAttribute="leading" secondItem="8YJ-W1-AgT" secondAttribute="leading" id="dbu-Uz-THf"/>
+                                    <constraint firstItem="Ntb-WD-eSu" firstAttribute="top" secondItem="8YJ-W1-AgT" secondAttribute="top" id="e1r-Xq-mUY"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ntb-WD-eSu" secondAttribute="trailing" id="imU-Ux-2qn"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ntb-WD-eSu" secondAttribute="bottom" id="oPG-kk-cux"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="96f-iq-Cgw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="A9B-2i-oCH"/>
                             <constraint firstItem="NCT-ih-mer" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="A9B-CH-CLu"/>
+                            <constraint firstItem="8YJ-W1-AgT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Cfs-au-zJk"/>
                             <constraint firstItem="dFT-wQ-sQz" firstAttribute="top" secondItem="NCT-ih-mer" secondAttribute="bottom" constant="20" id="Hiu-02-8NY"/>
                             <constraint firstItem="dFT-wQ-sQz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="137" id="YKq-Wi-Hc2"/>
                             <constraint firstItem="NCT-ih-mer" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kUM-oy-Uor"/>
+                            <constraint firstItem="8YJ-W1-AgT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="19" id="kgg-gP-tij"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dFT-wQ-sQz" secondAttribute="trailing" constant="137" id="lcH-Zh-7XF"/>
                             <constraint firstItem="96f-iq-Cgw" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="zT9-PN-bD6"/>
                         </constraints>
@@ -54,11 +73,12 @@
                     </view>
                     <connections>
                         <outlet property="imageWithAnimation" destination="NCT-ih-mer" id="Biw-fv-6FP"/>
+                        <outlet property="welcomeView" destination="8YJ-W1-AgT" id="qbZ-m8-tfS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+            <point key="canvasLocation" x="135" y="133.09859154929578"/>
         </scene>
     </scenes>
     <resources>

@@ -10,42 +10,95 @@ import UIKit
 
 class ViewController: UIViewController {
 
-  @IBOutlet var imageWithAnimation: UIImageView!
+    @IBOutlet var imageWithAnimation: UIImageView!
   
-  var images: [UIImage]!
+    var imageViews: [UIImageView] = []
 
- override func viewDidLoad() {
-    super.viewDidLoad()
-}
-  
-  @IBAction func goButton(_ sender: UIButton) {
-    sender.tag += 1
-    if sender.tag > 1 { sender.tag = 0 }
+    var isOpened = false
+
+    @IBOutlet weak var welcomeView: UIView!
     
-    switch sender.tag {
-    case 1:
-      simpleAnimation()
-      print("act_1")
-    default:
-      reverseSimpleAnimation()
-      print("act_2")
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.imageViews = UIImage(named: "1")!.divideIntoTwoVertialParts()
+            .map {
+                UIImageView.init(image: $0)
+            }
+        
+        let width = self.imageWithAnimation.frame.width
+        imageViews[0].frame = CGRect.init(
+            x: 0,
+            y: 0,
+            width: width / 2.0,
+            height: width
+        )
+        
+        imageViews[1].frame = CGRect.init(
+            x: width / 2.0,
+            y: 0,
+            width: width / 2.0,
+            height: width
+        )
+        
+        imageViews[0].alpha = 0.5
+        imageViews[0].alpha = 0.5
+        
+        self.welcomeView.addSubview(imageViews[0])
+        self.welcomeView.addSubview(imageViews[1])
+
+        print("\(self.imageWithAnimation.frame)")
     }
-  }
+    
+    override func viewDidLayoutSubviews() {
+        print("\(self.imageWithAnimation.frame)")
+    }
+
+    @IBAction func goButton(_ sender: UIButton) {
+        self.isOpened = !self.isOpened
+        
+        if self.isOpened {
+            self.showAnimation()
+        } else {
+            self.hideAnimation()
+        }
+    }
   
-  func simpleAnimation() {
-    self.images = (1...7).map { UIImage(named: String($0))! }
-    imageWithAnimation.animationImages = images
-    imageWithAnimation.animationDuration = 1.0
-    imageWithAnimation.animationRepeatCount = 1
-    imageWithAnimation.startAnimating()
-    imageWithAnimation.image = images.last
-  }
-  
-  func reverseSimpleAnimation() {
-    self.images = (8...13).map { UIImage(named: String($0))! }
-    imageWithAnimation.animationDuration = 1.0
-    imageWithAnimation.animationRepeatCount = 1
-    imageWithAnimation.startAnimating()
-    imageWithAnimation.image = images.last
-  }
+    func showAnimation() {
+        let width = self.imageWithAnimation.frame.width
+        
+        UIView.animate(
+            withDuration: 0.3,
+            delay: 0.0,
+            options: [.beginFromCurrentState, .curveEaseOut],
+            animations: {
+                self.imageViews[0].frame = CGRect.init(
+                    x: -width / 2.0,
+                    y: 0,
+                    width: width / 2.0,
+                    height: width
+                )
+        },
+            completion: nil
+        )
+    }
+
+    func hideAnimation() {
+        let width = self.imageWithAnimation.frame.width
+        
+        UIView.animate(
+            withDuration: 0.3,
+            delay: 0.0,
+            options: [.beginFromCurrentState, .curveEaseOut],
+            animations: {
+                self.imageViews[0].frame = CGRect.init(
+                    x: 0,
+                    y: 0,
+                    width: width / 2.0,
+                    height: width
+                )
+            },
+            completion: nil
+        )
+    }
 }
